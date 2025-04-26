@@ -32,11 +32,13 @@ fn main() {
     recipe.display();
 
     println!("\n{}", "Testing crafting materials".yellow());
-    let materials = [Material::new("Copper", Rarity::Common, 42),
+    let materials = [
+        Material::new("Copper", Rarity::Common, 42),
         Material::new("Lunar Steel", Rarity::Uncommon, 13),
         Material::new("Arcanum Crystal", Rarity::Rare, 5),
         Material::new("Star Essence", Rarity::Epic, 2),
-        Material::new("Meteorite Metal", Rarity::Legendary, 1)];
+        Material::new("Meteorite Metal", Rarity::Legendary, 1),
+    ];
 
     println!("Material inventory:");
     for (i, material) in materials.iter().enumerate() {

@@ -36,6 +36,10 @@ impl Material {
         )
     }
 
+    pub fn get_rarity(&self) -> Rarity {
+        self.rarity.clone()
+    }
+
     fn rarity_to_string(&self) -> &str {
         match self.rarity {
             Rarity::Common => "Common",
