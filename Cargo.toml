@@ -2,6 +2,7 @@
 name = "trixlab"
 version = "0.1.0"
 edition = "2024"
+authors = ["Trix <trix@academie-arcano-tech.edu>"]
 description = "A magico-mechanical workshop for creating rustic artifacts"
 
 [dependencies]
