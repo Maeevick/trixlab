@@ -1,0 +1,7 @@
+[package]
+name = "trixlab"
+version = "0.1.0"
+edition = "2024"
+description = "A magico-mechanical workshop for creating rustic artifacts"
+
+[dependencies]
