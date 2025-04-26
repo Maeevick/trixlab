@@ -4,7 +4,10 @@ mod utils;
 
 use chrono::Local;
 use colored::*;
-use crafting::recipe::Recipe;
+use crafting::{
+    material::{Material, Rarity},
+    recipe::Recipe,
+};
 use inventory::item::Item;
 use inventory::storage::Storage;
 use utils::random::generate_unique_id;
@@ -27,6 +30,25 @@ fn main() {
     let recipe = Recipe::new("Protection Amulet", vec!["Arcane Gem", "Enchanted Metal"]);
     println!("\n{}", "Available Recipe:".yellow());
     recipe.display();
+
+    println!("\n{}", "Testing crafting materials".yellow());
+    let materials = [Material::new("Copper", Rarity::Common, 42),
+        Material::new("Lunar Steel", Rarity::Uncommon, 13),
+        Material::new("Arcanum Crystal", Rarity::Rare, 5),
+        Material::new("Star Essence", Rarity::Epic, 2),
+        Material::new("Meteorite Metal", Rarity::Legendary, 1)];
+
+    println!("Material inventory:");
+    for (i, material) in materials.iter().enumerate() {
+        let info = material.display_info();
+        let colored_info = if material.is_rare() {
+            info.magenta().bold()
+        } else {
+            info.normal()
+        };
+
+        println!("  {}. {}", i + 1, colored_info);
+    }
 
     println!("\n{}", "=========================".green().bold());
 }
