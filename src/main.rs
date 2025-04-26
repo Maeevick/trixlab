@@ -1,14 +1,23 @@
-fn main() {
-    let workshop_name = "TrixLab";
-    let version = 0.1;
-    let year = 2025;
-    let is_experimental = true;
-    
-    println!("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-    println!("Workshop name: {}", workshop_name);
-    println!("Version: {:.1}", version);  // Formatting to 1 decimal place
-    println!("Year: {year}");  // Direct use of variable name
-    println!("Experimental mode: {}", if is_experimental { "ACTIVATED" } else { "DEACTIVATED" });
-    println!("{:-^40}", " WORKSHOP JOURNAL ");  // Centered with dash filling
-    println!("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-}
+use chrono::Local;
+   use colored::*;
+   use rand::Rng;
+
+   fn main() {
+       let now = Local::now();
+       let mut rng = rand::rng();
+       let magical_number = rng.random_range(1..100);
+       
+       println!("{}", "=== TRIXLAB WORKSHOP JOURNAL ===".green().bold());
+       println!("Date: {}", now.format("%Y-%m-%d %H:%M:%S"));
+       println!("Arcane energy level: {}", magical_number);
+       
+       if magical_number > 75 {
+           println!("{}", "WARNING: High energy levels!".red().bold());
+       } else if magical_number > 50 {
+           println!("{}", "Stable energy, optimal conditions.".yellow());
+       } else {
+           println!("{}", "Low energy, rest recommended.".blue());
+       }
+       
+       println!("{}", "=========================================".green().bold());
+   }

@@ -6,3 +6,12 @@ authors = ["Trix <trix@academie-arcano-tech.edu>"]
 description = "A magico-mechanical workshop for creating rustic artifacts"
 
 [dependencies]
+chrono = "0.4.40"
+colored = "3.0.0"
+rand = "0.9.1"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
