@@ -24,7 +24,7 @@ impl Material {
     }
 
     pub fn is_rare(&self) -> bool {
-        self.rarity = Rarity::Rare // Error! '=' instead of '>='
+        self.rarity == Rarity::Rare
     }
 
     pub fn display_info(&self) -> String {
